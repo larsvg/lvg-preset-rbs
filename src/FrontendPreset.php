@@ -1,6 +1,6 @@
 <?php
 
-namespace larsvg\Preset;
+namespace larsvg\PresetRbs;
 
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Foundation\Application;

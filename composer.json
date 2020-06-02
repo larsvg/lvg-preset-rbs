@@ -21,7 +21,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "larsvg\\Preset\\BoilerplateServiceProvider"
+                "larsvg\\PresetRbs\\BoilerplateServiceProvider"
             ]
         }
     }

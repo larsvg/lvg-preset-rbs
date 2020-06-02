@@ -4,9 +4,9 @@
 
     {!! view('layouts.meta') !!}
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}" >
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 
-    <link rel="shortcut icon" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.png"/>
 </head>
 <body>
 
@@ -26,23 +26,59 @@
     @endif
 </header>
 
-<div class="container-fluid page-body-wrapper full-page-wrapper">
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            {{ config('app.name') }}
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                @if (Route::has('login'))
+                    @auth
 
-    <div class="main-panel full-width">
-        <div class="content-wrapper">
-
-            @yield('content')
-
+                    @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">Login</a>
+                        </li>
+                        @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">Register</a>
+                            </li>
+                        @endif
+                    @endauth
+                @endif
+            </ul>
         </div>
-        <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
-                    Copyright &copy; {{ now()->year }} - {{ config('app.name', 'Laravel') }}
-                </span>
-            </div>
-        </footer>
     </div>
+</nav>
+
+<div class="container">
+
+    @yield('content')
+
 </div>
+
+<footer class="text-center mt-4">
+    Copyright &copy; {{ now()->year }} - {{ config('app.name', 'Laravel') }}
+</footer>
 
 <script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
 
