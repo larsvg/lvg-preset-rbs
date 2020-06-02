@@ -1,6 +1,6 @@
 {
     "name": "larsvg/preset-rbs",
-    "description": "Laravel preset with ReactJS/Bootstrap en Laravel structure scaffolding",
+    "description": "Laravel preset with ReactJS/Bootstrap en Laravel structure scaffolding.",
     "keywords": ["laravel", "laravel preset", "React JS", "Bootstrap"],
     "license": "MIT",
     "authors": [
