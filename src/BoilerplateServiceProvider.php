@@ -24,7 +24,7 @@ class BoilerplateServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        UiCommand::macro('lvgbp', function ($command) {
+        UiCommand::macro('react-bootstrap', function ($command) {
 
             FrontendPreset::install($command);
             ApplicationPreset::install($command);
