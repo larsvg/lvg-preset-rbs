@@ -1,0 +1,14 @@
+@tailwind base;
+
+/*! purgecss start ignore */
+
+//@import 'your/stuff';
+//@import 'your/things';
+
+
+
+/*! purgecss end ignore */
+
+@tailwind components;
+
+@tailwind utilities;

@@ -26,8 +26,15 @@ class BoilerplateServiceProvider extends ServiceProvider
     {
         UiCommand::macro('react-bootstrap', function ($command) {
 
-            FrontendPreset::install($command);
-            ApplicationPreset::install($command);
+            FrontendRbsPreset::install($command);
+            ApplicationPreset::install($command, 'bootstrap');
+
+            $command->comment('Please run "npm install && npm run watch" to compile your fresh scaffolding.');
+        });
+        UiCommand::macro('react-tailwind', function ($command) {
+
+            FrontendRtwPreset::install($command);
+            ApplicationPreset::install($command, 'tailwind');
 
             $command->comment('Please run "npm install && npm run watch" to compile your fresh scaffolding.');
         });

@@ -7,7 +7,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Arr;
 use Laravel\Ui\Presets\Preset as LaravelPreset;
 
-class FrontendPreset extends LaravelPreset
+class FrontendRtwPreset extends LaravelPreset
 {
 
     /**
@@ -26,7 +26,7 @@ class FrontendPreset extends LaravelPreset
         static::updateComponent();
         static::removeNodeModules();
 
-        $command->info('Frontend scaffolding with React JS and Bootstrap');
+        $command->info('Frontend scaffolding with React JS and Tailwind CSS');
     }
 
 
@@ -41,15 +41,18 @@ class FrontendPreset extends LaravelPreset
     protected static function updatePackageArray(array $packages)
     {
         return [
-                '@babel/preset-react' => '^7.0.0',
-                'react'               => '^16.2.0',
-                'react-dom'           => '^16.2.0',
-                'bootstrap'           => '^4.0.0',
-                'jquery'              => '^3.2',
-                'popper.js'           => '^1.12',
+                '@babel/preset-react'     => '^7.0.0',
+                'react'                   => '^16.2.0',
+                'react-dom'               => '^16.2.0',
+                'tailwindcss'             => '^1.4.6',
+                'glob-all'                => '^3.2.1',
+                'purgecss-webpack-plugin' => '^2.2.0',
             ] + Arr::except($packages, [
                 'vue',
                 'vue-template-compiler',
+                'bootstrap',
+                'jquery',
+                'popper.js',
             ]);
     }
 
@@ -62,7 +65,8 @@ class FrontendPreset extends LaravelPreset
      */
     protected static function updateWebpackConfiguration()
     {
-        copy(__DIR__ . '/stubs/webpack.mix.js', base_path('webpack.mix.js'));
+        copy(__DIR__ . '/stubs/assets/react-tailwind/webpack.mix.js', base_path('webpack.mix.js'));
+        copy(__DIR__ . '/stubs/assets/react-tailwind/tailwind.config.js', base_path('tailwind.config.js'));
     }
 
 
@@ -79,7 +83,7 @@ class FrontendPreset extends LaravelPreset
         );
 
         copy(
-            __DIR__ . '/stubs/Example.js',
+            __DIR__ . '/stubs/assets/react/Example.js',
             resource_path('js/components/Example.js')
         );
     }
@@ -93,8 +97,8 @@ class FrontendPreset extends LaravelPreset
      */
     protected static function updateBootstrapping()
     {
-        copy(__DIR__ . '/stubs/app.js', resource_path('js/app.js'));
-        copy(__DIR__ . '/stubs/app.scss', resource_path('sass/app.scss'));
+        copy(__DIR__ . '/stubs/assets/react-tailwind/app.js', resource_path('js/app.js'));
+        copy(__DIR__ . '/stubs/assets/react-tailwind/app.scss', resource_path('sass/app.scss'));
     }
 
 }

@@ -11,11 +11,11 @@ use Symfony\Component\Finder\SplFileInfo;
 class ApplicationPreset extends LaravelPreset
 {
 
-    public static function install($command)
+    public static function install($command, $viewPath = 'bootstrap')
     {
         static::configureControllers();
         static::configureRoutes();
-        static::configureViews();
+        static::configureViews($viewPath);
 
         $command->info('Backend scaffolding of views, route and controller structure.');
     }
@@ -40,19 +40,19 @@ class ApplicationPreset extends LaravelPreset
 
 
 
-    private static function configureViews()
+    private static function configureViews($viewPath)
     {
         (new Filesystem)->delete(
             resource_path('views/welcome.blade.php')
         );
 
-        static::copyResourceFolderContents('/stubs/Views/backend/home', 'views/backend/home');
-        static::copyResourceFolderContents('/stubs/Views/frontend/home', 'views/frontend/home');
-        static::copyResourceFolderContents('/stubs/Views/layouts/backend', 'views/layouts/backend');
-        static::copyResourceFolderContents('/stubs/Views/layouts/frontend', 'views/layouts/frontend');
+        static::copyResourceFolderContents('/stubs/Views/'.$viewPath.'/backend/home', 'views/backend/home');
+        static::copyResourceFolderContents('/stubs/Views/'.$viewPath.'/frontend/home', 'views/frontend/home');
+        static::copyResourceFolderContents('/stubs/Views/'.$viewPath.'/layouts/backend', 'views/layouts/backend');
+        static::copyResourceFolderContents('/stubs/Views/'.$viewPath.'/layouts/frontend', 'views/layouts/frontend');
 
         copy(
-            __DIR__ . '/stubs/Views/layouts/meta.blade.php',
+            __DIR__ . '/stubs/Views/'.$viewPath.'/layouts/meta.blade.php',
             resource_path('/views/layouts/meta.blade.php')
         );
     }
