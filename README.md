@@ -9,4 +9,4 @@ To scafold your laravel application with ReactJS and Bootstrap run
 `php artisan ui react-boostrap`
 
 To scafold with ReactJS and TailwindCSS run
-`php artisan ui react-boostrap`
+`php artisan ui react-tailwind`
