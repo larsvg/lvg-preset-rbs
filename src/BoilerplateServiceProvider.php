@@ -37,7 +37,7 @@ class BoilerplateServiceProvider extends ServiceProvider
             ApplicationPreset::install($command, 'tailwind');
 
             $command->comment('Run "npx tailwindcss init --full" to generate a full tailwind configuration file.');
-            $command->comment('Please run "npm install && npm run watch" to compile your fresh scaffolding.');
+            $command->comment('Next, run "npm install && npm run watch" to compile your fresh scaffolding.');
         });
     }
 }
