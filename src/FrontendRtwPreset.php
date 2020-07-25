@@ -45,6 +45,7 @@ class FrontendRtwPreset extends LaravelPreset
                 'react'                   => '^16.2.0',
                 'react-dom'               => '^16.2.0',
                 'tailwindcss'             => '^1.4.6',
+                'laravel-mix-purgecss'    => '^5.0.0',
                 'glob-all'                => '^3.2.1',
                 'purgecss-webpack-plugin' => '^2.2.0',
             ] + Arr::except($packages, [
