@@ -67,7 +67,7 @@ class FrontendRtwPreset extends LaravelPreset
     protected static function updateWebpackConfiguration()
     {
         copy(__DIR__ . '/stubs/assets/react-tailwind/webpack.mix.js', base_path('webpack.mix.js'));
-        copy(__DIR__ . '/stubs/assets/react-tailwind/tailwind.config.js', base_path('tailwind.config.js'));
+        //copy(__DIR__ . '/stubs/assets/react-tailwind/tailwind.config.js', base_path('tailwind.config.js'));
     }
 
 
