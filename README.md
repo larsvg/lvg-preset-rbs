@@ -1,4 +1,4 @@
-# lvg-preset-rbs
+# lvg-presets
 Laravel preset with frontend scaffolding and Laravel structure scaffolding.
 
 Run this command to add the preset to your project:
