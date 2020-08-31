@@ -1,9 +1,8 @@
 <?php
 
-namespace larsvg\PresetRbs;
+namespace larsvg\LvgPreset;
 
 use Illuminate\Filesystem\Filesystem;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Laravel\Ui\Presets\Preset as LaravelPreset;
 use Symfony\Component\Finder\SplFileInfo;

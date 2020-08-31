@@ -1,5 +1,5 @@
 {
-    "name": "larsvg/preset-rbs",
+    "name": "larsvg/lvg-preset",
     "description": "Laravel preset with ReactJS/Bootstrap en Laravel structure scaffolding.",
     "keywords": ["laravel", "laravel preset", "React JS", "Bootstrap"],
     "license": "MIT",
@@ -12,7 +12,7 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "larsvg\\PresetRbs\\": "src/"
+            "larsvg\\LvgPreset\\": "src/"
         }
     },
     "require": {
@@ -21,7 +21,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "larsvg\\PresetRbs\\BoilerplateServiceProvider"
+                "larsvg\\LvgPreset\\BoilerplateServiceProvider"
             ]
         }
     }

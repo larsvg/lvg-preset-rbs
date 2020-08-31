@@ -1,6 +1,6 @@
 <?php
 
-namespace larsvg\PresetRbs;
+namespace larsvg\LvgPreset;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Ui\UiCommand;
